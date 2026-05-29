@@ -8,10 +8,10 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #fdfbf7; color: #333; }
         
-        /* BANNER HÌNH NỀN ẨM THỰC CHUẨN MẪU */
+        /* BANNER HÌNH NỀN ẨM THỰC */
         header { 
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.vietnamnet.vn/Articles/Images/2016/09/08/09/20160908091811-am-thuc.jpg') no-repeat center center; 
+                        url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1600') no-repeat center center; 
             background-size: cover; 
             color: white; 
             text-align: center; 
@@ -21,7 +21,7 @@
         
         .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
         
-        /* BỘ NÚT LỌC MIỀN BO GÓC CHUẨN */
+        /* BỘ NÚT LỌC MIỀN */
         .filter-buttons { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
         .btn-filter { padding: 0.5rem 1.3rem; border: 1px solid #ced4da; background-color: white; border-radius: 4px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; display: flex; align-items: center; gap: 0.3rem; font-weight: 500; }
         
@@ -36,12 +36,12 @@
         .btn-filter[data-target="trung"].active { background-color: #ffc107; color: white; }
         .btn-filter[data-target="nam"].active { background-color: #198754; color: white; }
 
-        /* LƯỚI HIỂN THỊ CÁC MÓN ĂN (3 CỘT ĐỀU NHAU) */
+        /* LƯỚI HIỂN THỊ CÁC MÓN ĂN */
         .food-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
         .food-card { background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; border: 1px solid #e0e0e0; transition: transform 0.2s; }
         .food-card:hover { transform: translateY(-4px); }
         
-        /* ĐỊNH DẠNG KHUNG ẢNH CHỮ NHẬT NẰM NGANG CHUẨN ĐẸP */
+        /* KHUNG ẢNH CHUẨN ĐẸP */
         .food-img-wrapper { width: 100%; height: 220px; overflow: hidden; background-color: #eee; }
         .food-img { width: 100%; height: 100%; object-fit: cover; display: block; }
         
@@ -51,7 +51,7 @@
         .food-location { font-size: 0.85rem; color: #dc3545; font-weight: bold; margin-bottom: 0.75rem; }
         .food-desc { font-size: 0.9rem; color: #6c757d; margin-bottom: 1.5rem; line-height: 1.5; text-align: justify; }
         
-        /* NÚT XEM CÔNG THỨC VIỀN ĐỎ */
+        /* NÚT XEM CÔNG THỨC */
         .btn-recipe { width: 100%; padding: 0.5rem; background-color: white; color: #dc3545; border: 1px solid #dc3545; border-radius: 4px; font-size: 0.95rem; cursor: pointer; transition: all 0.2s; text-align: center; font-weight: bold; }
         .btn-recipe:hover { background-color: #dc3545; color: white; }
 
@@ -90,7 +90,7 @@
             
             <div class="food-card" data-region="bac">
                 <div class="food-img-wrapper">
-                    <img class="food-img" src="https://i1-giadinh.vnecdn.net/2023/02/24/Pho-bo-1-1677226685.jpg?w=1020&h=612&q=100&dpr=1&fit=crop&s=Zf0v26T0G8n_5kZk5Bve_g" alt="Phở Bò">
+                    <img class="food-img" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pho-Beef-Noodles-2008.jpg" alt="Phở Bò">
                 </div>
                 <div class="food-info">
                     <div>
@@ -104,7 +104,7 @@
 
             <div class="food-card" data-region="bac">
                 <div class="food-img-wrapper">
-                    <img class="food-img" src="https://i1-giadinh.vnecdn.net/2023/04/24/Bun-cha-3-1682329323.jpg?w=1020&h=612&q=100&dpr=1&fit=crop&s=0K2HqN7nZ0tY18G3r4b8Yw" alt="Bún Chả">
+                    <img class="food-img" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/B%C3%BAn_ch%E1%BA%A3_H%C3%A0_N%E1%BB%99i.jpg" alt="Bún Chả">
                 </div>
                 <div class="food-info">
                     <div>
@@ -118,7 +118,7 @@
 
             <div class="food-card" data-region="trung">
                 <div class="food-img-wrapper">
-                    <img class="food-img" src="https://i1-giadinh.vnecdn.net/2022/05/31/Bun-bo-Hue-1-1653991275.jpg?w=1020&h=612&q=100&dpr=1&fit=crop&s=K9xS0S7Y0E8N2gR_M5uV3Q" alt="Bún Bò Huế">
+                    <img class="food-img" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/B%C3%BAn_b%C3%B2_Hu%E1%BA%BF.jpg" alt="Bún Bò Huế">
                 </div>
                 <div class="food-info">
                     <div>
@@ -132,7 +132,7 @@
 
             <div class="food-card" data-region="nam">
                 <div class="food-img-wrapper">
-                    <img class="food-img" src="https://i1-giadinh.vnecdn.net/2024/01/24/Thanh-pham-1-1706085697.jpg?w=1020&h=612&q=100&dpr=1&fit=crop&s=IuQ1X9_V2qWvL5f5B2f6Zw" alt="Cơm Tấm">
+                    <img class="food-img" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang.jpg" alt="Cơm Tấm">
                 </div>
                 <div class="food-info">
                     <div>
@@ -146,7 +146,7 @@
 
             <div class="food-card" data-region="nam">
                 <div class="food-img-wrapper">
-                    <img class="food-img" src="https://i1-giadinh.vnecdn.net/2021/11/10/Thanh-pham-2-1636531349.jpg?w=1020&h=612&q=100&dpr=1&fit=crop&s=Z6Jv4D2hW0f5r7k5B1e4Ww" alt="Bánh Xèo">
+                    <img class="food-img" src="https://upload.wikimedia.org/wikipedia/commons/3/34/Banh_xeo.jpg" alt="Bánh Xèo">
                 </div>
                 <div class="food-info">
                     <div>
@@ -178,7 +178,6 @@
     </div>
 
     <script>
-        // CƠ SỞ DỮ LIỆU CÔNG THỨC NẤU ĂN CHI TIẾT CỦA 5 MÓN
         const recipesData = {
             pho_bo: {
                 title: "Công thức nấu Phở Bò Hà Nội chuẩn vị",
@@ -266,7 +265,6 @@
             }
         };
 
-        // HÀM MỞ POP-UP CÔNG THỨC MÓN ĂN
         function openRecipe(key) {
             const recipe = recipesData[key];
             if (!recipe) return;
@@ -292,12 +290,10 @@
             document.getElementById('recipeOverlay').classList.add('active');
         }
 
-        // HÀM ĐÓNG POP-UP CÔNG THỨC MÓN ĂN
         function closeRecipe() {
             document.getElementById('recipeOverlay').classList.remove('active');
         }
 
-        // HÀM XỬ LÝ BỘ LỌC DANH MỤC MIỀN
         function filterFood(region) {
             const buttons = document.querySelectorAll('.btn-filter');
             buttons.forEach(btn => btn.classList.remove('active'));
