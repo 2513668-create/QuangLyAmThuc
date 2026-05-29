@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TINH HOA ẨM THỰC BA MIỀN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .banner-box {
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                        url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+            min-height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .card-img-top {
+            height: 200px; 
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="container my-4">
+    <div class="banner-box text-center p-4">
+        <h1 class="display-5 fw-bold text-warning" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">TINH HOA ẨM THỰC ĐẶC SẢN BA MIỀN</h1>
+        <p class="lead small mt-2" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">Hệ thống quản lý dữ liệu và tra cứu công thức chế biến dành cho sinh viên</p>
+    </div>
+
+    <div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
+        <button onclick="locVungMien('TatCa')" id="btn-TatCa" class="btn btn-lg btn-danger px-4 fs-6">Tất Cả Đặc Sản</button>
+        <button onclick="locVungMien('MienBac')" id="btn-MienBac" class="btn btn-lg btn-outline-primary px-4 fs-6">🍜 Miền Bắc</button>
+        <button onclick="locVungMien('MienTrung')" id="btn-MienTrung" class="btn btn-lg btn-outline-warning px-4 fs-6">🌶️ Miền Trung</button>
+        <button onclick="locVungMien('MienNam')" id="btn-MienNam" class="btn btn-lg btn-outline-success px-4 fs-6">🥥 Miền Nam</button>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="danh-sach-mon">
+        </div>
+</div>
+
+<script>
+    const danhSachMonAn = [
+        { id: 1, tenMon: "Phở Bò", vungMien: "MienBac", dacSan: "Hà Nội", moTa: "Món ăn quốc hồn quốc túy với nước dùng thanh ngọt tinh tế ninh từ xương ống bò.", hinhAnh: "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=800" },
+        { id: 2, tenMon: "Bún Chả", vungMien: "MienBac", dacSan: "Hà Nội", moTa: "Thịt nướng than hoa thơm nức ăn kèm bát nước chấm chua ngọt và đu đủ xanh.", hinhAnh: "https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?q=80&w=800" },
+        { id: 3, tenMon: "Bún Bò Huế", vungMien: "MienTrung", dacSan: "Huế", moTa: "Đặc sản cố đô mang hương vị đậm đà nồng nàn đặc trưng của mắm ruốc xứ Huế.", hinhAnh: "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800" },
+        { id: 4, tenMon: "Mì Quảng", vungMien: "MienTrung", dacSan: "Quảng Nam", moTa: "Sợi mì vàng dai, nước nhân đậm đà ăn kèm bánh tráng nướng giòn rụm.", hinhAnh: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=800" },
+        { id: 5, tenMon: "Cơm Tấm", vungMien: "MienNam", dacSan: "Sài Gòn", moTa: "Cơm tấm dẻo thơm, sườn nướng mật ong vàng óng kèm mỡ hành mướt mát.", hinhAnh: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800" }
+    ];
+
+    function hienThiMon(danhSach) {
+        const vungChua = document.getElementById('danh-sach-mon');
+        vungChua.innerHTML = '';
+        
+        danhSach.forEach(mon => {
+            vungChua.innerHTML += `
+                <div class="col">
+                    <div class="card h-100 shadow-sm border rounded-3 overflow-hidden">
+                        <img src="${mon.hinhAnh}" class="card-img-top">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-1">${mon.tenMon}</h5>
+                            <p class="small text-danger fw-bold mb-3">📍 Đặc sản: ${mon.dacSan}</p>
+                            <p class="card-text text-muted small flex-grow-1">${mon.moTa}</p>
+                            <button class="btn btn-outline-danger w-100 mt-3" onclick="alert('Nguyên liệu chuẩn vị: Gạo/Bánh phở/Bún, các loại thịt tươi ngon kèm gia vị đặc trưng vùng miền.')">Xem Công Thức</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    function locVungMien(mien) {
+        const cacNut = ['TatCa', 'MienBac', 'MienTrung', 'MienNam'];
+        cacNut.forEach(n => {
+            const btn = document.getElementById('btn-' + n);
+            if(n === 'TatCa') {
+                btn.className = (mien === n) ? "btn btn-lg btn-danger px-4 fs-6" : "btn btn-lg btn-outline-danger px-4 fs-6";
+            } else if(n === 'MienBac') {
+                btn.className = (mien === n) ? "btn btn-lg btn-primary px-4 fs-6" : "btn btn-lg btn-outline-primary px-4 fs-6";
+            } else if(n === 'MienTrung') {
+                btn.className = (mien === n) ? "btn btn-lg btn-warning text-white px-4 fs-6" : "btn btn-lg btn-outline-warning px-4 fs-6";
+            } else if(n === 'MienNam') {
+                btn.className = (mien === n) ? "btn btn-lg btn-success px-4 fs-6" : "btn btn-lg btn-outline-success px-4 fs-6";
+            }
+        });
+
+        if (mien === 'TatCa') {
+            hienThiMon(danhSachMonAn);
+        } else {
+            const ketQua = danhSachMonAn.filter(m => m.vungMien === mien);
+            hienThiMon(ketQua);
+        }
+    }
+
+    hienThiMon(danhSachMonAn);
+</script>
+</body>
+</html>
