@@ -9,52 +9,51 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #ffffff; color: #333; }
         
-        /* Banner giống hệt ảnh mẫu với lớp phủ tối mờ */
+        /* Banner Header chuẩn ảnh nền đồ ăn nướng mờ tối */
         header { 
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1600') no-repeat center center; 
             background-size: cover; 
             color: white; 
             text-align: center; 
-            padding: 5rem 1rem; 
+            padding: 4.5rem 1rem; 
         }
-        header h1 { font-size: 1.8rem; font-weight: normal; opacity: 0.95; }
-        header p { font-size: 1.1rem; opacity: 0.8; margin-top: 0.5rem; font-weight: 300; }
+        header h1 { font-size: 1.6rem; font-weight: normal; letter-spacing: 0.5px; }
         
         .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
         
-        /* Cấu hình bộ nút lọc chuẩn màu sắc của bạn */
+        /* Bộ nút lọc bo góc nhẹ giống mẫu */
         .filter-buttons { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
         .btn-filter { padding: 0.4rem 1.2rem; border: 1px solid #ced4da; background-color: white; border-radius: 4px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; display: flex; align-items: center; gap: 0.3rem; }
         
-        /* Màu sắc chuẩn theo ảnh mẫu */
+        /* Màu sắc viền nút theo đúng mẫu */
         .btn-filter[data-target="all"] { background-color: #dc3545; color: white; border-color: #dc3545; }
         .btn-filter[data-target="bac"] { color: #0d6efd; border-color: #0d6efd; }
         .btn-filter[data-target="trung"] { color: #ffc107; border-color: #ffc107; }
         .btn-filter[data-target="nam"] { color: #198754; border-color: #198754; }
         
-        .btn-filter:hover, .btn-filter.active { opacity: 0.85; transform: translateY(-1px); }
+        .btn-filter:hover, .btn-filter.active { opacity: 0.85; }
         .btn-filter[data-target="all"].active { background-color: #bd2130; }
         .btn-filter[data-target="bac"].active { background-color: #0d6efd; color: white; }
         .btn-filter[data-target="trung"].active { background-color: #ffc107; color: white; }
         .btn-filter[data-target="nam"].active { background-color: #198754; color: white; }
 
-        /* Lưới hiển thị 3 cột chuẩn đét */
+        /* Lưới hiển thị 3 cột */
         .food-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
-        .food-card { background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s; display: flex; flex-direction: column; border: 1px solid #e0e0e0; }
+        .food-card { background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-direction: column; border: 1px solid #e0e0e0; transition: transform 0.2s; }
+        .food-card:hover { transform: translateY(-3px); }
         
-        /* Khung ảnh chữ nhật nằm ngang giống ảnh mẫu */
-        .food-img-wrapper { width: 100%; height: 200px; overflow: hidden; }
+        .food-img-wrapper { width: 100%; height: 210px; overflow: hidden; background-color: #f8f9fa; }
         .food-img { width: 100%; height: 100%; object-fit: cover; }
         
         .food-info { padding: 1.25rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         .food-title { font-size: 1.4rem; font-weight: bold; margin-bottom: 0.2rem; color: #000; }
         
-        /* Định dạng chữ ghim Địa danh màu hồng/đỏ */
-        .food-location { font-size: 0.85rem; color: #dc3545; font-weight: bold; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.2rem; }
+        /* Chữ định vị Đặc sản màu hồng đỏ chuẩn */
+        .food-location { font-size: 0.85rem; color: #dc3545; font-weight: bold; margin-bottom: 0.75rem; }
         .food-desc { font-size: 0.9rem; color: #6c757d; margin-bottom: 1.5rem; line-height: 1.5; text-align: justify; }
         
-        /* Nút Xem Công Thức thanh mảnh viền đỏ */
+        /* Nút Xem Công Thức thanh mảnh viền đỏ chuẩn mẫu */
         .btn-recipe { width: 100%; padding: 0.4rem; background-color: white; color: #dc3545; border: 1px solid #dc3545; border-radius: 4px; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; text-align: center; }
         .btn-recipe:hover { background-color: #dc3545; color: white; }
     </style>
@@ -68,7 +67,7 @@
     <div class="container">
         <div class="filter-buttons">
             <button class="btn-filter active" data-target="all" onclick="filterFood('all')">Tất Cả Đặc Sản</button>
-            <button class="btn-filter" data-target="bac" onclick="filterFood('bac')">🍜 Miền Bắc</button>
+            <button class="btn-filter" data-target="bac" onclick="filterFood('bac')">🥣 Miền Bắc</button>
             <button class="btn-filter" data-target="trung" onclick="filterFood('trung')">🌶️ Miền Trung</button>
             <button class="btn-filter" data-target="nam" onclick="filterFood('nam')">🥥 Miền Nam</button>
         </div>
@@ -83,7 +82,7 @@
                     <div>
                         <h3 class="food-title">Phở Bò</h3>
                         <div class="food-location">📍 Đặc sản: Hà Nội</div>
-                        <p class="food-desc">Món ăn quốc hồn quốc túy với nước dùng thanh ngọt tinh tế ninh từ xương.</p>
+                        <p class="food-desc">Môn ăn quốc hồn quốc túy với nước dùng thanh ngọt tinh tế ninh từ xương bò quyện cùng quế hồi.</p>
                     </div>
                     <button class="btn-recipe">Xem Công Thức</button>
                 </div>
@@ -97,7 +96,7 @@
                     <div>
                         <h3 class="food-title">Bún Chả</h3>
                         <div class="food-location">📍 Đặc sản: Hà Nội</div>
-                        <p class="food-desc">Thịt nướng than hoa thơm nức mũi ăn kèm nước chấm chua ngọt đưa miệng.</p>
+                        <p class="food-desc">Thịt nướng than hoa thơm nức mũi ăn kèm nước chấm chua ngọt đưa miệng chả rế giòn tan.</p>
                     </div>
                     <button class="btn-recipe">Xem Công Thức</button>
                 </div>
@@ -111,7 +110,21 @@
                     <div>
                         <h3 class="food-title">Bún Bò Huế</h3>
                         <div class="food-location">📍 Đặc sản: Huế</div>
-                        <p class="food-desc">Đặc sản cố đô mang hương vị nồng nàn đặc trưng của mắm ruốc xứ Huế.</p>
+                        <p class="food-desc">Đặc sản cố đô mang hương vị nồng nàn đặc trưng của mắm ruốc xứ Huế, sả cây và sa tế cay nồng.</p>
+                    </div>
+                    <button class="btn-recipe">Xem Công Thức</button>
+                </div>
+            </div>
+
+            <div class="food-card" data-region="nam">
+                <div class="food-img-wrapper">
+                    <img class="food-img" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=600" alt="Cơm Tấm">
+                </div>
+                <div class="food-info">
+                    <div>
+                        <h3 class="food-title">Cơm Tấm</h3>
+                        <div class="food-location">📍 Đặc sản: Sài Gòn</div>
+                        <p class="food-desc">Cơm tấm sườn bì chả trứng kết hợp mỡ hành béo ngậy và nước mắm chua ngọt đậm đà miền Nam.</p>
                     </div>
                     <button class="btn-recipe">Xem Công Thức</button>
                 </div>
@@ -124,8 +137,8 @@
                 <div class="food-info">
                     <div>
                         <h3 class="food-title">Bánh Xèo</h3>
-                        <div class="food-location">📍 Đặc sản: Miền Tây</div>
-                        <p class="food-desc">Vỏ bánh vàng giòn rụm, đượm hương cốt dừa, ôm trọn nhân tôm thịt giá đỗ thơm ngon.</p>
+                        <div class="food-location">📍 Đặc sản: Miền Nam</div>
+                        <p class="food-desc">Bánh xèo vỏ vàng giòn rụm, nhân tôm thịt giá đỗ đượm mùi cốt dừa ăn kèm rau rừng và nước chấm.</p>
                     </div>
                     <button class="btn-recipe">Xem Công Thức</button>
                 </div>
