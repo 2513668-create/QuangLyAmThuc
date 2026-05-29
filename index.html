@@ -8,7 +8,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #fdfbf7; color: #333; }
         
-        /* BANNER CÓ HÌNH NỀN ẨM THỰC CHUẨN MẪU */
+        /* BANNER HÌNH NỀN ẨM THỰC CHUẨN MẪU */
         header { 
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('https://images.vietnamnet.vn/Articles/Images/2016/09/08/09/20160908091811-am-thuc.jpg') no-repeat center center; 
@@ -17,11 +17,11 @@
             text-align: center; 
             padding: 5rem 1rem; 
         }
-        header h1 { font-size: 1.8rem; font-weight: bold; line-height: 1.4; max-width: 900px; margin: 0 auto; }
+        header h1 { font-size: 1.7rem; font-weight: bold; line-height: 1.4; max-width: 900px; margin: 0 auto; }
         
         .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
         
-        /* BỘ NÚT LỌC MIỀN */
+        /* BỘ NÚT LỌC MIỀN BO GÓC CHUẨN */
         .filter-buttons { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
         .btn-filter { padding: 0.5rem 1.3rem; border: 1px solid #ced4da; background-color: white; border-radius: 4px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; display: flex; align-items: center; gap: 0.3rem; font-weight: 500; }
         
@@ -36,12 +36,12 @@
         .btn-filter[data-target="trung"].active { background-color: #ffc107; color: white; }
         .btn-filter[data-target="nam"].active { background-color: #198754; color: white; }
 
-        /* LƯỚI HIỂN THỊ DANH SÁCH MÓN ĂN */
+        /* LƯỚI HIỂN THỊ CÁC MÓN ĂN (3 CỘT ĐỀU NHAU) */
         .food-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
         .food-card { background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; border: 1px solid #e0e0e0; transition: transform 0.2s; }
         .food-card:hover { transform: translateY(-4px); }
         
-        /* KHUNG HÌNH ẢNH MÓN ĂN */
+        /* ĐỊNH DẠNG KHUNG ẢNH CHỮ NHẬT NẰM NGANG CHUẨN ĐẸP */
         .food-img-wrapper { width: 100%; height: 220px; overflow: hidden; background-color: #eee; }
         .food-img { width: 100%; height: 100%; object-fit: cover; display: block; }
         
@@ -51,11 +51,11 @@
         .food-location { font-size: 0.85rem; color: #dc3545; font-weight: bold; margin-bottom: 0.75rem; }
         .food-desc { font-size: 0.9rem; color: #6c757d; margin-bottom: 1.5rem; line-height: 1.5; text-align: justify; }
         
-        /* NÚT XEM CÔNG THỨC VIỀN ĐỎ CHUẨN */
+        /* NÚT XEM CÔNG THỨC VIỀN ĐỎ */
         .btn-recipe { width: 100%; padding: 0.5rem; background-color: white; color: #dc3545; border: 1px solid #dc3545; border-radius: 4px; font-size: 0.95rem; cursor: pointer; transition: all 0.2s; text-align: center; font-weight: bold; }
         .btn-recipe:hover { background-color: #dc3545; color: white; }
 
-        /* HỘP THOẠI POP-UP XEM CÔNG THỨC TỰ ĐỘNG THUẦN CHẮC CHẮN CHẠY */
+        /* HỘP THOẠI POP-UP THUẦN TỰ ĐỘNG KHÔNG LỖI */
         .custom-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 9999; opacity: 0; pointer-events: none; transition: all 0.25s ease; }
         .custom-overlay.active { opacity: 1; pointer-events: auto; }
         
@@ -104,4 +104,216 @@
 
             <div class="food-card" data-region="bac">
                 <div class="food-img-wrapper">
-                    <img class="food-img" src="https://i1-giadinh.vnecdn.net/2023/04/24/Bun-cha-3-1682329323.jpg?w=1020&h=612&q=100&dpr=1&fit=crop&s=0K2HqN7nZ0tY
+                    <img class="food-img" src="https://i1-giadinh.vnecdn.net/2023/04/24/Bun-cha-3-1682329323.jpg?w=1020&h=612&q=100&dpr=1&fit=crop&s=0K2HqN7nZ0tY18G3r4b8Yw" alt="Bún Chả">
+                </div>
+                <div class="food-info">
+                    <div>
+                        <h3 class="food-title">Bún Chả</h3>
+                        <div class="food-location">📍 Đặc sản: Hà Nội</div>
+                        <p class="food-desc">Thịt nướng than hoa thơm nức mũi ăn kèm nước chấm chua ngọt đưa miệng cùng những miếng chả rế giòn tan.</p>
+                    </div>
+                    <button class="btn-recipe" onclick="openRecipe('bun_cha')">Xem Công Thức</button>
+                </div>
+            </div>
+
+            <div class="food-card" data-region="trung">
+                <div class="food-img-wrapper">
+                    <img class="food-img" src="https://i1-giadinh.vnecdn.net/2022/05/31/Bun-bo-Hue-1-1653991275.jpg?w=1020&h=612&q=100&dpr=1&fit=crop&s=K9xS0S7Y0E8N2gR_M5uV3Q" alt="Bún Bò Huế">
+                </div>
+                <div class="food-info">
+                    <div>
+                        <h3 class="food-title">Bún Bò Huế</h3>
+                        <div class="food-location">📍 Đặc sản: Huế</div>
+                        <p class="food-desc">Đặc sản cố đô mang hương vị nồng nàn đặc trưng của mắm ruốc xứ Huế kết hợp sả cây và sa tế ớt cay nồng béo ngậy.</p>
+                    </div>
+                    <button class="btn-recipe" onclick="openRecipe('bun_bo')">Xem Công Thức</button>
+                </div>
+            </div>
+
+            <div class="food-card" data-region="nam">
+                <div class="food-img-wrapper">
+                    <img class="food-img" src="https://i1-giadinh.vnecdn.net/2024/01/24/Thanh-pham-1-1706085697.jpg?w=1020&h=612&q=100&dpr=1&fit=crop&s=IuQ1X9_V2qWvL5f5B2f6Zw" alt="Cơm Tấm">
+                </div>
+                <div class="food-info">
+                    <div>
+                        <h3 class="food-title">Cơm Tấm</h3>
+                        <div class="food-location">📍 Đặc sản: Sài Gòn</div>
+                        <p class="food-desc">Cơm tấm sườn nướng mật ong kết hợp bì thính, chả trứng hấp, thêm chút mỡ hành béo ngậy và nước mắm chua ngọt đặc sánh.</p>
+                    </div>
+                    <button class="btn-recipe" onclick="openRecipe('com_tam')">Xem Công Thức</button>
+                </div>
+            </div>
+
+            <div class="food-card" data-region="nam">
+                <div class="food-img-wrapper">
+                    <img class="food-img" src="https://i1-giadinh.vnecdn.net/2021/11/10/Thanh-pham-2-1636531349.jpg?w=1020&h=612&q=100&dpr=1&fit=crop&s=Z6Jv4D2hW0f5r7k5B1e4Ww" alt="Bánh Xèo">
+                </div>
+                <div class="food-info">
+                    <div>
+                        <h3 class="food-title">Bánh Xèo</h3>
+                        <div class="food-location">📍 Đặc sản: Miền Nam</div>
+                        <p class="food-desc">Bánh xèo có vỏ vàng giòn rụm từ bột nghệ, ôm trọn nhân tôm, thịt ba chỉ và giá đỗ, ăn kèm rau rừng và nước chấm tỏi ớt.</p>
+                    </div>
+                    <button class="btn-recipe" onclick="openRecipe('banh_xeo')">Xem Công Thức</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="custom-overlay" id="recipeOverlay" onclick="closeRecipe()">
+        <div class="custom-modal" onclick="event.stopPropagation()">
+            <div class="modal-title-bar">
+                <h3 id="recipeTitle">Tên món ăn</h3>
+                <button class="close-modal-btn" onclick="closeRecipe()">&times;</button>
+            </div>
+            <div class="modal-content-body">
+                <div class="recipe-section">🥗 Nguyên liệu chuẩn bị</div>
+                <ul class="recipe-list" id="recipeIngredients"></ul>
+                
+                <div class="recipe-section">🍳 Các bước thực hiện</div>
+                <ol class="recipe-list" id="recipeSteps"></ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // CƠ SỞ DỮ LIỆU CÔNG THỨC NẤU ĂN CHI TIẾT CỦA 5 MÓN
+        const recipesData = {
+            pho_bo: {
+                title: "Công thức nấu Phở Bò Hà Nội chuẩn vị",
+                ingredients: [
+                    "Bánh phở tươi: 500g",
+                    "Xương ống bò: 1kg (ninh lấy nước cốt dùng)",
+                    "Thịt bò phi lê mềm: 300g (thái lát mỏng ăn tái)",
+                    "Hương liệu: 1 củ gừng, 3 củ hành tím, 2 bông hoa hồi, 1 thanh quế, 1 quả thảo quả",
+                    "Rau thơm ăn kèm: Hành lá, rau mùi, húng quế, chanh, ớt tươi"
+                ],
+                steps: [
+                    "Xương bò rửa sạch, đem chần sơ nước sôi, sau đó đem ninh nhỏ lửa liu riu từ 4-6 tiếng cùng hành tây và gừng nướng chín.",
+                    "Rang thơm quế, hồi, thảo quả, bỏ túi vải rồi thả vào nồi nước dùng tiếp tục ninh 1-2 tiếng, nêm nếm muối gia vị cho ngọt thanh.",
+                    "Chần bánh phở xếp vào tô, rải đều các lát thịt bò tươi thái mỏng lên phía trên.",
+                    "Rải hành lá xắt nhỏ rồi chan nước dùng đang sôi sùng sục vào để làm chín tái thịt bò. Thưởng thức kèm chanh và tương ớt."
+                ]
+            },
+            bun_cha: {
+                title: "Công thức làm Bún Chả Hà Nội nướng than hoa",
+                ingredients: [
+                    "Thịt nạc vai xay băm mịn (làm chả viên): 300g",
+                    "Thịt ba chỉ heo thái miếng mỏng (làm chả miếng): 300g",
+                    "Bún tươi sợi nhỏ: 1kg",
+                    "Đu đủ xanh, củ cà rốt, tỏi băm, ớt xắt, quả chanh",
+                    "Gia vị: Nước mắm ngon, đường, mật ong, dầu hào, hành khô",
+                    "Rau sống ăn kèm: Xà lách, tía tô, rau kinh giới"
+                ],
+                steps: [
+                    "Ướp thịt băm và thịt miếng riêng biệt với hành khô, nước mắm, mật ong, dầu hào thơm trong khoảng 30-45 phút.",
+                    "Nặn chả viên tròn dẹt, xếp lên vỉ cùng thịt ba chỉ rồi đem nướng chín vàng sém đều các cạnh trên bếp than hoa.",
+                    "Làm dưa góp: Đu đủ, cà rốt nạo lát mỏng đem ngâm muối vắt ráo rồi trộn nước cốt chanh đường pha chua ngọt.",
+                    "Pha nước chấm: Pha nước mắm, nước ấm, nước cốt chanh, đường đun âm ấm, thả tỏi ớt băm, dưa góp và thả chả nướng vào tô rồi thưởng thức cùng bún."
+                ]
+            },
+            bun_bo: {
+                title: "Công thức nấu Bún Bò Huế thơm nồng vị sả mắm ruốc",
+                ingredients: [
+                    "Bắp bò, nạm bò ngon: 500g",
+                    "Chân khoanh giò heo luộc béo: 1 chiếc chặt khúc",
+                    "Mắm ruốc Huế chính gốc: 3 thìa lớn",
+                    "Sả cây đập dập: 6 nhánh, ớt sa tế cay, dầu điều màu",
+                    "Bún tươi sợi to đặc trưng xứ Huế",
+                    "Rau sống: Bắp chuối bào, giá đỗ tươi, rau muống chẻ"
+                ],
+                steps: [
+                    "Luộc chần sơ khoanh chân giò, nạm bò và xương bò, đem ninh nhỏ lửa cùng sả cây đập dập và hành tây để lấy nước ngọt.",
+                    "Khuấy mắm ruốc với nước lạnh, đợi lắng cặn rồi lọc lấy phần nước trong đổ thẳng vào nồi nước dùng nêm nếm vừa vị.",
+                    "Phi thơm sả băm, tỏi với dầu điều màu và sa tế ớt rồi trút vào nồi tạo nên lớp màu đỏ cam bắt mắt.",
+                    "Thái thịt bò miếng to bản, xếp vào tô cùng bún sợi to, giò heo rồi chan nước dùng sả ruốc đậm đà lên trên."
+                ]
+            },
+            com_tam: {
+                title: "Công thức làm Cơm Tấm Sườn Bì Chả Sài Gòn",
+                ingredients: [
+                    "Gạo tấm thơm dẻo đặc trưng: 300g",
+                    "Sườn heo cốt lết: 3 miếng dày vừa",
+                    "Bì heo luộc thái sợi mịn trộn thính gạo thơm",
+                    "Trứng gà tươi: 3 quả (để chưng làm chả trứng), mỡ hành lá",
+                    "Gia vị: Mật ong, sữa đặc, nước mắm ngon, tỏi băm, sả băm",
+                    "Đồ chua ăn kèm, dưa leo tươi, cà chua thái lát"
+                ],
+                steps: [
+                    "Gạo tấm vo sạch đem đi hấp chín bằng xửng để hạt cơm được tơi xốp mềm mại, không bị nhão dính.",
+                    "Sườn đập dập cho mềm, đem ướp mật ong, nước mắm, sữa đặc, tỏi sả băm trong 1 tiếng rồi nướng chín vàng hai mặt.",
+                    "Trộn thịt băm, mộc nhĩ nấm mèo, miến bún tàu và trứng đem hấp cách thủy làm chả trứng béo ngậy.",
+                    "Xới cơm tấm ra đĩa, đặt sườn nướng, bì thính, chả trứng lên, rưới thêm mỡ hành lá và chan nước mắm tỏi ớt kẹo ngọt."
+                ]
+            },
+            banh_xeo: {
+                title: "Công thức làm Bánh Xèo Miền Nam giòn rụm, béo ngậy",
+                ingredients: [
+                    "Bột bánh xèo pha sẵn có nghệ: 200g",
+                    "Nước cốt dừa: 100ml, nước lọc: 250ml, hành lá xắt nhỏ",
+                    "Thịt ba chỉ heo thái mỏng: 200g, tôm tươi làm sạch bóc vỏ: 200g",
+                    "Giá đỗ tươi rửa sạch: 200g",
+                    "Rau ăn kèm: Cải bẹ xanh, xà lách, rau thơm các loại",
+                    "Nước mắm chua ngọt pha tỏi, ớt, đường, chanh"
+                ],
+                steps: [
+                    "Hòa quyện đều bột bánh xèo cùng nước lọc, nước cốt dừa béo và hành lá xắt nhỏ, để bột nghỉ trong khoảng 15 phút.",
+                    "Cho dầu ăn vào chảo nóng, bỏ tôm và thịt ba chỉ vào xào sơ cho chín tái đều.",
+                    "Múc một vá bột đổ vào chảo xoay tròn đều để vỏ bánh mỏng dính quanh lòng chảo, rải giá đỗ lên rồi đậy nắp vung trong 2 phút.",
+                    "Mở nắp ra đun tiếp nhỏ lửa cho vành bánh chín vàng giòn rụm tự bong ra, gập đôi bánh lại. Cuộn ăn kèm cải bẹ xanh chấm nước mắm chua ngọt."
+                ]
+            }
+        };
+
+        // HÀM MỞ POP-UP CÔNG THỨC MÓN ĂN
+        function openRecipe(key) {
+            const recipe = recipesData[key];
+            if (!recipe) return;
+
+            document.getElementById('recipeTitle').innerText = recipe.title;
+
+            const ingContainer = document.getElementById('recipeIngredients');
+            ingContainer.innerHTML = '';
+            recipe.ingredients.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                ingContainer.appendChild(li);
+            });
+
+            const stepsContainer = document.getElementById('recipeSteps');
+            stepsContainer.innerHTML = '';
+            recipe.steps.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                stepsContainer.appendChild(li);
+            });
+
+            document.getElementById('recipeOverlay').classList.add('active');
+        }
+
+        // HÀM ĐÓNG POP-UP CÔNG THỨC MÓN ĂN
+        function closeRecipe() {
+            document.getElementById('recipeOverlay').classList.remove('active');
+        }
+
+        // HÀM XỬ LÝ BỘ LỌC DANH MỤC MIỀN
+        function filterFood(region) {
+            const buttons = document.querySelectorAll('.btn-filter');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            const clickedBtn = document.querySelector(`.btn-filter[data-target="${region}"]`);
+            if(clickedBtn) clickedBtn.classList.add('active');
+
+            const cards = document.querySelectorAll('.food-card');
+            cards.forEach(card => {
+                if (region === 'all' || card.getAttribute('data-region') === region) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
