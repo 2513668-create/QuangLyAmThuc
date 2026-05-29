@@ -1,0 +1,58 @@
+﻿@model List<QuanLyAmThuc.Models.MonAn>
+
+<style>
+    .banner-box {
+        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                    url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1600');
+        background-size: cover;
+        background-position: center;
+        min-height: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+</style>
+
+<div class="banner-box text-center p-4">
+    <h1 class="display-5 fw-bold text-warning" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">TINH HOA ẨM THỰC ĐẶC SẢN BA MIỀN</h1>
+    <p class="lead small mt-2" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">Hệ thống quản lý dữ liệu và tra cứu công thức chế biến dành cho sinh viên</p>
+</div>
+
+<div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
+    <a href="@Url.Action("Index")" class="btn btn-lg @(ViewBag.VungMienHienTai == null ? "btn-danger" : "btn-outline-danger") px-4 fs-6">Tất Cả Đặc Sản</a>
+    <a href="@Url.Action("Index", new { vungMien = "🍜 Miền Bắc" })" class="btn btn-lg @(ViewBag.VungMienHienTai == "🍜 Miền Bắc" ? "btn-primary" : "btn-outline-primary") px-4 fs-6">🍜 Miền Bắc</a>
+    <a href="@Url.Action("Index", new { vungMien = "🌶️ Miền Trung" })" class="btn btn-lg @(ViewBag.VungMienHienTai == "🌶️ Miền Trung" ? "btn-warning text-white" : "btn-outline-warning") px-4 fs-6">🌶️ Miền Trung</a>
+    <a href="@Url.Action("Index", new { vungMien = "🥥 Miền Nam" })" class="btn btn-lg @(ViewBag.VungMienHienTai == "🥥 Miền Nam" ? "btn-success" : "btn-outline-success") px-4 fs-6">🥥 Miền Nam</a>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var mon in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm border rounded-3 overflow-hidden">
+                    <img src="@mon.HinhAnh" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-1">@mon.TenMon</h5>
+                        <p class="small text-danger fw-bold mb-3">📍 Đặc sản: @mon.DacSan</p>
+                        <p class="card-text text-muted small flex-grow-1" style="text-align: justify;">@mon.MoTa</p>
+                        <a href="@Url.Action("Details", new { id = mon.Id })" class="btn btn-outline-danger w-100 mt-3">Xem Công Thức</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-12 text-center my-5 py-5">
+            <span class="fs-2">⚠️</span>
+            <p class="text-muted mt-2">Hiện chưa có dữ liệu món ăn thuộc vùng miền này trên hệ thống.</p>
+        </div>
+    }
+</div>
